@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-content>
+    <section class="left">
+      <h2>{{ data()?.id }}</h2>
+      <img [src]="data()?.image" alt="No se encontró la URL de la imagen" />
+      <p>{{ data()?.description }}</p>
+    </section>
+    <section class="right">
+      @for (character of data()?.combat_style_character; track character.id) {
+        <h3>{{ character.id }} - {{ character.name }}</h3>
+      }
+    </section>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,9 @@
+<p>demon-slayer-characters-list works!</p>
+
+<app-primary-character-card> </app-primary-character-card>
+
+@for (item of characterList; track item.id) {
+  <app-character-card [data]="item" [type]="CharacterCardType.ROUNDED"> </app-character-card>
+} @empty {
+  <p>No hay elementos para mostrar</p>
+}

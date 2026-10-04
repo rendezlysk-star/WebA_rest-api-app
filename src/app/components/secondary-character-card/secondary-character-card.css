@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  margin: 16px auto;
+  max-width: 900px;
+}
+
+mat-card-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+img {
+  width: 140px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.right {
+  text-align: center;
+}
