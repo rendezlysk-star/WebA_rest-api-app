@@ -1,0 +1,21 @@
+<h1>Backend local</h1>
+@if (productService.productsResource.isLoading()) {
+  <div>Se esta ejecutando la petición...</div>
+}
+
+@if (productService.productsResource.error()) {
+  <div>{{ productService.errorMesage() }}</div>
+}
+
+@if (productService.productsResource.hasValue()) {
+  @for (product of productService.productsResource.value().data; track product.id) {
+    <div>
+      {{ product.id }}
+      {{ product.name }}
+      {{ product.sku }}
+      {{ product.categoryId }}-{{ product.category.name }}
+    </div>
+  } @empty {
+    <p>No hay productos disponibles.</p>
+  }
+}

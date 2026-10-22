@@ -2,15 +2,41 @@ import { Component } from '@angular/core';
 import { CharacterCard } from '../../components/character-card/character-card';
 import { CharacterModel } from '../../interfaces/character-model';
 import { CharacterCardType } from '../../enums/character-card-type';
-import { PrimaryCharacterCard } from '../../components/primary-character-card/primary-character-card';
+import {
+  TitleCasePipe,
+  JsonPipe,
+  CurrencyPipe,
+  DatePipe,
+  LowerCasePipe,
+  UpperCasePipe,
+} from '@angular/common';
 
 @Component({
   selector: 'app-demon-slayer-characters-list',
-  imports: [CharacterCard, PrimaryCharacterCard],
+  imports: [
+    CharacterCard,
+    TitleCasePipe,
+    JsonPipe,
+    CurrencyPipe,
+    DatePipe,
+    LowerCasePipe,
+    UpperCasePipe,
+  ],
   templateUrl: './demon-slayer-characters-list.html',
   styleUrl: './demon-slayer-characters-list.css',
 })
 export class DemonSlayerCharactersList {
+  firstName = 'angello steve';
+  firstLastName = 'first contreras';
+  secondLastName = 'SECOND VÁSQUEZ';
+  objectExample = {
+    firstName: 'Angello',
+    dpi: 3032354700108,
+  };
+
+  amount = 1000;
+  currentDate = new Date();
+
   readonly CharacterCardType = CharacterCardType;
   characterList = [
     {

@@ -1,6 +1,11 @@
 <p>demon-slayer-characters-list works!</p>
 
-<app-primary-character-card> </app-primary-character-card>
+<h3>{{ firstName | titlecase }}</h3>
+<h3>{{ firstLastName | uppercase }}</h3>
+<h3>{{ secondLastName | lowercase }}</h3>
+<h3>{{ objectExample | json }}</h3>
+<h3>{{ amount | currency }}</h3>
+<h3>{{ currentDate | date }}</h3>
 
 @for (item of characterList; track item.id) {
   <app-character-card [data]="item" [type]="CharacterCardType.ROUNDED"> </app-character-card>
